@@ -23,6 +23,8 @@ class RepoResultsViewController: UIViewController {
 		
 		tableView.delegate = self
 		tableView.dataSource = self
+        tableView.rowHeight = UITableViewAutomaticDimension
+        tableView.estimatedRowHeight = 120
 
         // Initialize the UISearchBar
         searchBar = UISearchBar()
@@ -45,9 +47,9 @@ class RepoResultsViewController: UIViewController {
         GithubRepo.fetchRepos(searchSettings, successCallback: { (newRepos) -> Void in
 
             // Print the returned repositories to the output window
-            for repo in newRepos {
-                print(repo)
-            }
+//            for repo in newRepos {
+//                print(repo)
+//            }
 			
 			self.repos = newRepos
 			
@@ -99,4 +101,8 @@ extension RepoResultsViewController: UISearchBarDelegate, UITableViewDelegate, U
         searchBar.resignFirstResponder()
         doSearch()
     }
+    
+//    func searchBarTextDidBeginEditing(searchBar: UISearchBar) {
+//        <#code#>
+//    }
 }
