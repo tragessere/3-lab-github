@@ -12,6 +12,7 @@ import MBProgressHUD
 // Main ViewController
 class RepoResultsViewController: UIViewController {
 
+	@IBOutlet var tableView: UITableView!
     var searchBar: UISearchBar!
     var searchSettings = GithubRepoSearchSettings()
 
@@ -19,6 +20,9 @@ class RepoResultsViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+		
+		tableView.delegate = self
+		tableView.dataSource = self
 
         // Initialize the UISearchBar
         searchBar = UISearchBar()
@@ -43,7 +47,11 @@ class RepoResultsViewController: UIViewController {
             // Print the returned repositories to the output window
             for repo in newRepos {
                 print(repo)
-            }   
+            }
+			
+			self.repos = newRepos
+			
+			self.tableView.reloadData()
 
             MBProgressHUD.hideHUDForView(self.view, animated: true)
             }, error: { (error) -> Void in
@@ -53,7 +61,23 @@ class RepoResultsViewController: UIViewController {
 }
 
 // SearchBar methods
-extension RepoResultsViewController: UISearchBarDelegate {
+extension RepoResultsViewController: UISearchBarDelegate, UITableViewDelegate, UITableViewDataSource {
+	
+	func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+		if repos != nil {
+			return repos.count
+		} else {
+			return 0
+		}
+	}
+	
+	func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+		let cell = tableView.dequeueReusableCellWithIdentifier("GithubRepoCell", forIndexPath: indexPath) as! GithubRepoCell
+		
+		cell.repo = repos[indexPath.row]
+		
+		return cell
+	}
 
     func searchBarShouldBeginEditing(searchBar: UISearchBar) -> Bool {
         searchBar.setShowsCancelButton(true, animated: true)

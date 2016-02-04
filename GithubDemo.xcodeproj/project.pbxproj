@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		20C5F6A11C63F204001C4276 /* GithubRepoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20C5F6A01C63F204001C4276 /* GithubRepoCell.swift */; };
 		2E1D083C73FC177474941B1A /* Pods.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 34CBA2B0A0E031A1D298899E /* Pods.framework */; };
 		6B2DDEEE1B02911A00D25281 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B2DDEED1B02911A00D25281 /* AppDelegate.swift */; };
 		6B2DDEF01B02911A00D25281 /* RepoResultsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B2DDEEF1B02911A00D25281 /* RepoResultsViewController.swift */; };
@@ -29,6 +30,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		20C5F6A01C63F204001C4276 /* GithubRepoCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GithubRepoCell.swift; sourceTree = "<group>"; };
 		34CBA2B0A0E031A1D298899E /* Pods.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		6B2DDEE81B02911A00D25281 /* GithubDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GithubDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6B2DDEEC1B02911A00D25281 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -65,6 +67,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		20C5F69D1C63F1C6001C4276 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				20C5F6A01C63F204001C4276 /* GithubRepoCell.swift */,
+			);
+			name = Views;
+			sourceTree = "<group>";
+		};
 		2C33185645EA926CDF82E322 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -105,6 +115,7 @@
 		6B2DDEEA1B02911A00D25281 /* GithubDemo */ = {
 			isa = PBXGroup;
 			children = (
+				20C5F69D1C63F1C6001C4276 /* Views */,
 				6B2DDEED1B02911A00D25281 /* AppDelegate.swift */,
 				6B2DDEEF1B02911A00D25281 /* RepoResultsViewController.swift */,
 				6B2DDF0D1B02970A00D25281 /* GithubRepo.swift */,
@@ -296,6 +307,7 @@
 			files = (
 				6B2DDEF01B02911A00D25281 /* RepoResultsViewController.swift in Sources */,
 				6B9F8B0A1B02B8E5001483E7 /* GithubRepoSearchSettings.swift in Sources */,
+				20C5F6A11C63F204001C4276 /* GithubRepoCell.swift in Sources */,
 				6B2DDEEE1B02911A00D25281 /* AppDelegate.swift in Sources */,
 				6B2DDF0E1B02970A00D25281 /* GithubRepo.swift in Sources */,
 			);
