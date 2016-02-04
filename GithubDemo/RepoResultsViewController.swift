@@ -102,7 +102,8 @@ extension RepoResultsViewController: UISearchBarDelegate, UITableViewDelegate, U
         doSearch()
     }
     
-//    func searchBarTextDidBeginEditing(searchBar: UISearchBar) {
-//        <#code#>
-//    }
+    func searchBar(searchBar: UISearchBar, textDidChange searchText: String) {
+        searchSettings.changeSearchText(searchText)
+        doSearch()
+    }
 }

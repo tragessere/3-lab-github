@@ -16,4 +16,8 @@ class GithubRepoSearchSettings {
     init() {
         
     }
+    
+    func changeSearchText(searchText: String) {
+        searchString = searchText
+    }
 }
