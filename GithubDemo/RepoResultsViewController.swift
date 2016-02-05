@@ -97,13 +97,10 @@ extension RepoResultsViewController: UISearchBarDelegate, UITableViewDelegate, U
     }
 
     func searchBarSearchButtonClicked(searchBar: UISearchBar) {
-        searchSettings.searchString = searchBar.text
+		if searchBar.text != nil {
+			searchSettings.changeSearchText(searchBar.text!)
+		}
         searchBar.resignFirstResponder()
-        doSearch()
-    }
-    
-    func searchBar(searchBar: UISearchBar, textDidChange searchText: String) {
-        searchSettings.changeSearchText(searchText)
         doSearch()
     }
 }
