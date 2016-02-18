@@ -60,10 +60,19 @@ class RepoResultsViewController: UIViewController {
                 print(error)
         })
     }
+    
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        if segue.identifier == "ToSettings" {
+            let nc = segue.destinationViewController as! UINavigationController
+            let vc = nc.topViewController as! SearchSettingsViewController
+            vc.settings = searchSettings
+            vc.delegate = self
+        }
+    }
 }
 
 // SearchBar methods
-extension RepoResultsViewController: UISearchBarDelegate, UITableViewDelegate, UITableViewDataSource {
+extension RepoResultsViewController: UISearchBarDelegate, UITableViewDelegate, UITableViewDataSource, SettingsDelegate {
 	
 	func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
 		if repos != nil {
@@ -102,5 +111,10 @@ extension RepoResultsViewController: UISearchBarDelegate, UITableViewDelegate, U
 		}
         searchBar.resignFirstResponder()
         doSearch()
+    }
+    
+    func didSaveSettings(settings: GithubRepoSearchSettings) {
+        searchSettings = settings
+        print(settings.minStars)
     }
 }
