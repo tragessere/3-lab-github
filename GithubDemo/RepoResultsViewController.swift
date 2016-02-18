@@ -115,6 +115,5 @@ extension RepoResultsViewController: UISearchBarDelegate, UITableViewDelegate, U
     
     func didSaveSettings(settings: GithubRepoSearchSettings) {
         searchSettings = settings
-        print(settings.minStars)
     }
 }
