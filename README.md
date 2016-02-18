@@ -7,4 +7,4 @@ Owner: **Evan Tragesser**, **Qinxin Shi**
 
 ## Video Walkthrough
 
-![Walkthrough](github-demo.gif)
+![Walkthrough](github-demo_2.gif)
